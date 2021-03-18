@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "99fd7e22-7ec4-45ca-9b3c-50239bc14148",
+		"name": "BCP-CHALLENGE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET-CURRENCY",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pan\" : \"123123123123\",\n\t\"exp_year\" : \"2018\",\n\t\"month\" : \"10\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8084/currency-exchange/v1.0/exchange-rate?amount=8&origincurrency=1&destinycurrency=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"currency-exchange",
+						"v1.0",
+						"exchange-rate"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "8"
+						},
+						{
+							"key": "origincurrency",
+							"value": "1"
+						},
+						{
+							"key": "destinycurrency",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE-CURRENCY",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idCurrency\": 1,\n    \"currency\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/currency-exchange/v1.0/exchange-rate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"currency-exchange",
+						"v1.0",
+						"exchange-rate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
